@@ -1,0 +1,90 @@
+<div class="card">
+	<div class="card-header d-flex justify-content-between">
+		<div class="header-title">
+			<h4 class="card-title">
+                <i class="{$current_page.nav_icon}"></i>
+                <span>{$current_page.nav_title}</span>
+            </h4>
+		</div>
+	</div>
+	<div class="card-body">
+        <form action="{site_url($current_page.nav_url)}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" value="{$user_data.user_id}" >
+            <div class="row">
+                <div class="col-md-2 align-self-center center">
+                    <div class="form-group">
+                        <img id="output" src="{$BASEURL}resource\assets\default\images\uploads\users\{$user_data.user_photo|default:'default.jpg'}" alt="user_photo" class="img-preview"/><br/>
+                        <label>Preview</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="col-md-12">                      
+                        <div class="form-group">
+                            <label>Fullname *</label>
+                            <input type="text" class="form-control" placeholder="Fullname" required name="user_alias" value="{$user_data.user_alias}">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>                                 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Photo</label>
+                            <div class="input-group mb-4">
+                                <div class="custom-file">
+                                   <input type="file" class="custom-file-input" id="image_file" name="user_photo" accept="image/*" onchange="loadFile(event)">
+                                   <label class="custom-file-label" for="image_file">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Username *</label>
+                        <input type="text" class="form-control" placeholder="Username" required name="user_name" value="{$user_data.user_name}">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="text" class="form-control" placeholder="Email" required name="user_email" value="{$user_data.user_email}">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Password Baru</label>
+                        <input type="password" class="form-control" placeholder="Password" name="user_pass" value="">
+                        <div class="help-block with-errors"><small>Kosongkan bila tidak ingin mengganti password</small></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Verifikasi Password Baru</label>
+                        <input type="password" class="form-control" placeholder="Verifikasi Password" name="user_pass_verif" value="">
+                        <div class="help-block with-errors"><small>Kosongkan bila tidak ingin mengganti password</small></div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var loadFile = function(event) {
+                  var output = document.getElementById('output');
+                  output.src = URL.createObjectURL(event.target.files[0]);
+                  output.onload = function() {
+                    URL.revokeObjectURL(output.src) // free memory
+                  }
+                };
+            </script>
+            <button type="submit" class="btn btn-primary mr-2">Update</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<main>
+    <div class="container kategori-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Edit Outlet</b></h2>
+            </div>
+        </div>
+
+    <form method="post" action="{site_url([$current_page.nav_url, 'edit', {$outlet.outlet_id}])}" enctype="multipart/form-data">
+        <div class="row">
+        <div class="col col-md-6 mx-auto">
+
+        <div class="row justify-content-center mb-4">
+            <label for="kode_outlet" class="col-sm-2 col-form-label">Kode Outlet</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" readonly value="{$outlet_code|default:''}" name="outlet_code">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="nama_outlet" class="col-sm-2 col-form-label">Nama Outlet</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="outlet_name" value="{$outlet.outlet_name}">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="outlet_address" class="col-sm-2 col-form-label">Alamat</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="outlet_address" value="{$outlet.outlet_address}">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="outlet_address" class="col-sm-2 col-form-label">Kota</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="kota" value="{$outlet.kota}">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="outlet_phone" class="col-sm-2 col-form-label">Telepon</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="outlet_phone" value="{$outlet.outlet_phone}">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-5">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="outlet_status" id="inlineRadio1" value="0" {if $outlet.outlet_status == 0}checked{/if}>
+                <label class="form-check-label" for="inlineRadio1" name="outlet_status" selected>Active</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="outlet_status" id="inlineRadio2" value="1" {if $outlet.outlet_status == 1}checked{/if}>
+                <label class="form-check-label" for="inlineRadio2" name="outlet_status">Inactive</label>
+              </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <div class="form-group">
+                <label for="outlet_photo">Foto Outlet</label>
+                <input type="file" class="form-control-file" name="outlet_photo" id="outlet_photo" value="$outlet.outlet_photo">
+            </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="status" class="col-sm-2 col-form-label">Highlight</label>
+        <div class="col-sm-5">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="outlet_highlight" id="Highlight1" value="0" {if $outlet.outlet_status == 0}checked{/if}>
+                <label class="form-check-label" for="Highlight1" name="outlet_highlight" selected>Not Show</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="outlet_highlight" id="Highlight2" value="1" {if $outlet.outlet_status == 1}checked{/if}>
+                <label class="form-check-label" for="Highlight2" name="outlet_highlight">Show</label>
+              </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-sm-5 d-grid gap-2 mx-auto">
+                <button type="submit" class="btn" style="background-color: #662A0C; color: aliceblue;" >Submit</button>                      
+            </div>
+        </div> 
+        </div>     
+    </div>
+</div>
+</form>
+</main>

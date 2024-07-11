@@ -1,0 +1,97 @@
+<div class="container kategori-container mb-5">
+    <div class="d-flex flex-column align-items-center">
+        <div class="heading-page p-2 mt-4">
+            <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Edit Data Member</b></h2>
+        </div>
+    </div>
+    
+    <form method="post" action="">
+        <div class="row">
+            <div class="col col-md-6 mx-auto">
+    
+            <div class="row justify-content-center mb-4">
+                <label for="kode_kategori" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="user_name" value="{$member->user_name}">
+            </div>
+            </div>
+    
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">User Alias</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="user_alias" value="{$member->user_alias}"> 
+            </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">Fullname</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="fullname" value="{$member->fullname}"> 
+            </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="user_email" value="{$member->user_email}"> 
+            </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" name="date_of_birth" value="{$member->date_of_birth}"> 
+            </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">Telepon</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="phone" value="{$member->phone}"> 
+            </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="nama_kategori" class="col-sm-2 col-form-label">Alamat</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" name="address" value="{$member->address}"> 
+            </div>
+            </div>
+    
+            <div class="row justify-content-center mb-4">
+                <label for="status" class="col-sm-2 col-form-label" >Status</label>
+            <div class="col-sm-5">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_st" id="user_st" value="0" {if $member->user_st == 0}checked{/if}>
+                    <label class="form-check-label" for="inlineRadio1" name="user_st" selected>Active</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_st" id="user_st" value="1" {if $member->user_st == 1}checked{/if}>
+                    <label class="form-check-label" for="inlineRadio2" name="user_st">Tidak Aktif</label>
+                  </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-4">
+                <label for="status" class="col-sm-2 col-form-label" >User Lock</label>
+            <div class="col-sm-5">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_lock" id="user_lock" value="0" {if $member->user_lock == 0}checked{/if}>
+                    <label class="form-check-label" for="inlineRadio1" name="user_lock" selected>Active</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="user_lock" id="user_lock" value="1" {if $member->user_lock == 1}checked{/if}>
+                    <label class="form-check-label" for="inlineRadio2" name="user_lock">Tidak Aktif</label>
+                  </div>
+                </div>
+            </div>
+    
+            <div class="row justify-content-center">
+                <div class="col-sm-5 d-grid gap-2 mx-auto">
+                    <button type="submit" class="btn" style="background-color: #662A0C; color: aliceblue;" >Update</button>                      
+                </div>
+            </div> 
+            </div>     
+        </div>
+    </form>
+</div>

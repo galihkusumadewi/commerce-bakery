@@ -1,0 +1,70 @@
+.center {
+    text-align: center;
+}
+
+.login-header-logo {
+    margin: 5px;
+    padding: 5px;
+}
+
+.login-header-logo img{
+    max-width: 25%;
+}
+
+#load-page {
+    background-color: #ffffff;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin-top: 0px;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden !important;
+    right: 0px;
+    z-index: 999999; }
+  
+#load-center {
+    background: url(../images/logo-kenes-2.png) no-repeat scroll center center;
+    background-size: 10%;
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    animation-name: animate-loader;
+    animation-duration: 1.5s;
+}
+
+@keyframes animate-loader {
+    0% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0); }
+    50% {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg); }
+    100% {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -ms-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0); }
+}
+
+.error-img {
+    width: 45%
+}
+
+.img-preview {
+    max-height: 100px;
+    max-width: 90%;
+}
+
+.error-template {
+    height: 70vh;
+    width: 100%;
+}

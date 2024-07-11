@@ -1,0 +1,112 @@
+<main>
+    <div class="container edit-menu-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Edit Data Role</b></h2>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col col-md-6 mx-auto">
+            <div class="card">
+                <form method="post" action="{site_url([$current_page.nav_url, 'edit_app_role'])}" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userCode">Role ID</label>
+                            <input type="text" class="form-control" readonly value="{$role.role_id}" name="role_id"> 
+                            <input type="hidden" class="form-control" value="{$role.id}" name="id"> 
+                            <input type="hidden" class="form-control" name="default_page" id="def_page" value="2001000">
+                            <input type="hidden" class="form-control" name="site_id" id="site_id" value="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Role Name</label>
+                            <input type="text" class="form-control" name="role_nm" id="userName" value="{$role.role_nm}">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Role Status</label>
+                            <select id="userType" name="role_st" class="form-control">
+                                <option value="1" {if $role.role_st == '1'} selected {/if} >Inactive</option>
+                                <option value="0" {if $role.role_st == '0'} selected {/if} >Active</option>
+                            </select>
+                        </div>
+                    </div>
+
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="userType">Akses Menu</label>
+                                {foreach from=$list_menu key=key1 item=list_menus}
+                                <div class="menu-item mb-3 border-bottom pb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="col-md-8">
+                                            <input type="hidden" class="form-control"  value="{$list_menus.id}" name="id_menu[]">
+                                            <input type="hidden" class="form-control"  value="{$role.role_id}" name="role_id[]">
+
+                                            <select id="userType{$key1}" name="akses_menu[]" class="form-control"> 
+                                                <option disabled>--Menu Terpilih--</option>
+                                                <option selected value="{$list_menus.nav_id}">{$list_menus.nav_title}</option>
+                                                <option disabled>--All Menu--</option>
+                                                {foreach from=$list_all_menu key=key item=akses_menu}
+                                                <option value="{$akses_menu.nav_id}">{$akses_menu.nav_title}</option>
+                                                {/foreach}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 mt-3">
+                                            <a class="btn btn-md btn-outline-secondary deleteButton" id="deleteButton" role-menu-id="{$list_menus.id}"><i class="fa-solid fa-minus" style="color: #6e380c;"></i></a>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="row mt-3">
+                                        <div class="col">
+                                            <label for="selectRead">Read</label>
+                                            <select class="custom-select" id="selectRead" name="read[]">
+                                                <option value="1" {if $list_menus.read == 1}selected{/if}>Allowed</option>
+                                                <option value="0" {if $list_menus.read == 0}selected{/if}>Not Allowed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="selectCreate">Create</label>
+                                            <select class="custom-select" id="selectCreate" name="create[]">
+                                                <option value="1" {if $list_menus.create == 1}selected{/if}>Allowed</option>
+                                                <option value="0" {if $list_menus.create == 0}selected{/if}>Not Allowed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="selectEdit">Edit</label>
+                                            <select class="custom-select" id="selectEdit" name="edit[]">
+                                                <option value="1" {if $list_menus.edit == 1}selected{/if}>Allowed</option>
+                                                <option value="0" {if $list_menus.edit == 0}selected{/if}>Not Allowed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <label for="selectDelete">Delete</label>
+                                            <select class="custom-select" id="selectDelete" name="delete[]">
+                                                <option value="1" {if $list_menus.delete == 1}selected{/if}>Allowed</option>
+                                                <option value="0" {if $list_menus.delete == 0}selected{/if}>Not Allowed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                {/foreach}
+                            </div>
+                        
+                        
+                                <a class="btn btn-md btn-outline-primary" id="showFormButton" role-id="{$role.role_id}"><i class="fa-solid fa-circle-plus"></i> Tambah Menu</a>
+
+                                <div id="formContainer">
+                                
+                                    
+                                </div>
+
+                    <div class="form-group" style="text-align: center;">
+                        <label for="submit"></label>
+                        <button type="submit" style="background-color: #662A0C; color: #fff;" class="btn btn-primary" name="submit">SIMPAN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

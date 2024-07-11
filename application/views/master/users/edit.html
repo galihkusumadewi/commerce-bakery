@@ -1,0 +1,78 @@
+<main>
+    <div class="container users-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Edit Data user</b></h2>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" action="{site_url([$current_page.nav_url, 'edit',{$roles->user_id}])}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col col-md-6 mx-auto">
+              
+                <div class="d-flex flex-column alert ">
+                 
+                </div>
+           
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userCode">Username</label>
+                            <input type="text" value="{$roles->user_name}" class="form-control" name="user_name" id="userCode">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Nama Lengkap</label>
+                            <input type="text" value="{$roles->user_alias}" class="form-control" name="fullname" id="userName">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Role</label>
+                            
+                            <select id="userType" name="user_role" class="form-control">
+                               
+                                <option disabled>--Role Terpilih--</option>    
+                               <option value="{$roles->role_id}" selected>{$roles->role_nm}</option>
+                               <option disabled>--All Role--</option>
+                                {foreach from=$role key=key item=roles}
+                                  {if $roles.role_nm neq 'Member'}
+                                <option value="{$roles.role_id}">{$roles.role_nm}</option>
+                                  {/if}
+                                {/foreach}
+
+                          
+                            </select>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userPrice">Email</label>
+                            <input type="text" value="{$roles->user_email}"class="form-control" name="email" id="userPrice">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">New Password</label>
+                            <input type="password" value=""class="form-control" name="password" id="userPrice">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPict">User Pict</label>
+                            <input type="file" class="form-control-file" name="user_photo" id="user_pict">
+                        </div>
+                        <div class="form-group">
+                            <label for="user_st">User Status</label>
+                            <select id="user_st" name="user_st" class="form-control" value="{$roles->user_st}">
+                                <option value="1" {if $roles->user_st == '1'} selected {/if} >Inactive</option>
+                                <option value="0" {if $roles->user_st == '0'} selected {/if} >Active</option>
+                            </select>
+                        </div>
+                   
+                        <div class="form-group">
+                            <label for="sumbit"></label>
+                            <button type="submit" style="background-color: #662A0C; color: #fff;" class="btn btn-primary" name="submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+
+

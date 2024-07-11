@@ -1,0 +1,50 @@
+<main>
+    <div class="container kategori-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Tambah Data Kategori</b></h2>
+            </div>
+        </div>
+
+    <form method="post" action="{site_url([$current_page.nav_url, 'add'])}">
+        <div class="row">
+        <div class="col col-md-6 mx-auto">
+        
+        <div class="row justify-content-center mb-4">
+            <label for="kode_kategori" class="col-sm-2 col-form-label">Kode Kategori</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" readonly value="{$cat_code|default:''}" name="cat_code">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="nama_kategori" class="col-sm-2 col-form-label">Nama Kategori</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" name="cat_name">
+        </div>
+        </div>
+
+        <div class="row justify-content-center mb-4">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-5">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cat_st" id="inlineRadio1" value="0">
+                <label class="form-check-label" for="inlineRadio1" name="cat_st" selected>Active</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cat_st" id="inlineRadio2" value="1">
+                <label class="form-check-label" for="inlineRadio2" name="cat_st">Inactive</label>
+              </div>
+        </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-sm-5 d-grid gap-2 mx-auto">
+                <button type="submit" class="btn" style="background-color: #662A0C; color: aliceblue;" >Submit</button>                      
+            </div>
+        </div> 
+        </div>     
+    </div>
+</div>
+</form>
+</main>

@@ -1,0 +1,100 @@
+<div class="card">
+	<div class="card-header d-flex justify-content-between">
+		<div class="header-title">
+			<h4 class="card-title">
+                <i class="{$current_page.nav_icon}"></i>
+                <span>{$current_page.nav_title}</span>
+            </h4>
+		</div>
+        <div class="d-flex align-items-center">
+            <div class="btn-group" role="group">
+                {if $allowed.create}
+                    <a class="btn btn-md btn-outline-primary" href="{site_url([$current_page.nav_url, 'add'])}"><i class="fa-solid fa-circle-plus"></i> Tambah</a>
+                {/if}
+            </div>
+          </div>
+	</div>
+	<div class="card-body">
+        <div class="table-responsive">
+            <table id="datatable" class="table data-tables table-striped">
+                <thead>
+                    <tr class="light">
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Nama Lengkap</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {$no = 1}
+                    {foreach from=$users key=key item=user}
+                    <tr>
+                        <td align="center">{$no++}</td>
+                        <td>{$user.user_name}</td>
+                        <td>{$user.user_alias}</td>
+                        <td>{$user.role_nm}</td>
+                        <td>{$user.user_email}</td>
+                        <td align="center">{$user.status}</td>
+                        <td align="center">
+                            <a class="btn btn-sm btn-outline-info rounded" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="{site_url([$current_page.nav_url, 'detail', {$user.user_id}])}"><i class="fa-regular fa-file"></i></a>
+                            {if $allowed.edit}
+                                <a class="btn btn-sm btn-outline-secondary rounded" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="{site_url([$current_page.nav_url, 'edit',{$user.user_id}])}"><i class="fa-regular fa-pen-to-square"></i></a>
+                            {/if}
+                            {if $allowed.delete}
+                            <a class="btn btn-sm btn-outline-danger rounded" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="{site_url([$current_page.nav_url, 'delete',{$user.user_id}])}"><i class="fa-solid fa-trash"></i></a>
+                            {/if}
+                        </td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <!-- modal delete -->
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Popup Example</title>
+            <!-- Include FontAwesome CSS (you may need to adjust the version) -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        </head>
+        <body>
+
+        <div class="container">
+            <!-- ... Your existing HTML code ... -->
+        </div>
+
+        <!-- JavaScript to handle delete confirmation -->
+        <script>
+            // Add click event listeners to the delete buttons
+            document.querySelectorAll('.btn-outline-danger').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Show a confirmation dialog
+                    var confirmed = window.confirm("Are you sure you want to delete this item?");
+                    
+                    // If the user confirms, perform the delete action (you can customize this part)
+                    if (confirmed) {
+                        // Delete action (customize this)
+                        
+                        // Optionally, remove the row from the table
+                        var row = this.closest('tr');
+                        row.remove();
+                    }
+                });
+            });
+        </script>
+
+        </body>
+        </html>
+
+
+</div>
+
+

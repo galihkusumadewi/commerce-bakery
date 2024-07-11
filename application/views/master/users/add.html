@@ -1,0 +1,71 @@
+<main>
+    <div class="container users-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Tambah Data user</b></h2>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" action="{site_url([$current_page.nav_url, 'add'])}" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col col-md-6 mx-auto">
+              
+                <div class="d-flex flex-column">
+                 
+                </div>
+           
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userCode">Username</label>
+                            <input type="text" value="" class="form-control" name="username" id="userCode">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Nama Lengkap</label>
+                            <input type="text" value="" class="form-control" name="fullname" id="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Role</label>
+                            
+                            <select id="userType" name="user_role" class="form-control">
+                               
+                                {foreach from=$roles key=key item=role}
+                                 {if $role.role_nm neq 'Member'}
+                                <option value="{$role.role_id}">{$role.role_nm}</option>
+                                 {/if}
+                                {/foreach}
+                            </select>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="userPrice">Email</label>
+                            <input type="email" value=""class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" value=""class="form-control" name="password" id="userPrice">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPict">User Pict</label>
+                            <input type="file" class="form-control-file" name="user_photo" id="user_pict">
+                        </div>
+                        <div class="form-group">
+                            <label for="userSt">Status</label>
+                            <select id="userSt" name="user_st" class="form-control">
+                                <option value="0" selected>Active</option>
+                                <option value="1">Inactive</option>
+                            </select>
+                        </div>
+                   
+                        <div class="form-group">
+                            <label for="sumbit"></label>
+                            <button type="submit" style="background-color: #662A0C; color: #fff;" class="btn btn-primary" name="submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>

@@ -1,0 +1,632 @@
+<main>
+
+	<div id="card-promo" class="modal-promo">
+		<div class="swiper promo-slide">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<span class="close " onclick="closeModal()"
+						style="color: white; font-size: 40px; cursor: pointer;">&times;</span>
+					<img src="{$BASEURL}/resource/assets-frontend/dist/product/pre-launch/promo/WhatsApp Image 2023-08-08 at 14.42.11.jpeg"
+						class="img-fluid"> </img>
+				</div>
+				<div class="swiper-slide">
+					<span class="close " onclick="closeModal()"
+						style="color: white; font-size: 40px; cursor: pointer;">&times;</span>
+					<img src="{$BASEURL}/resource/assets-frontend/dist/product/pre-launch/promo/WhatsApp Image 2023-08-08 at 14.42.48.jpeg"
+						class="img-fluid"> </img>
+				</div>
+				<div class="swiper-slide">
+					<span class="close " onclick="closeModal()"
+						style="color: white; font-size: 40px; cursor: pointer;">&times;</span>
+					<img src="{$BASEURL}/resource/assets-frontend/dist/product/pre-launch/promo/IMG-20230801-WA0001.jpg"
+						class="img-fluid"> </img>
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+
+	<section class="hero mb-4">
+		<div class="ratio banner-video" style="--bs-aspect-ratio: 50%;">
+			<video playsinline autoplay muted loop class="object-fit-cover">
+				<source
+					src="{$BASEURL}/resource/assets-frontend/dist/banner/E14055631AA164E9E60CAE72AC3454B0_video_dashinit.mp4"
+					type="video/mp4">
+			</video>
+		</div>
+		<div class="hero-caption-video">
+			<h1 class="text-uppercase fw-bold text-nowrap">Biarkan Kami Membuat,</h1>
+			<h1 class="text-uppercase fw-bold text-wrap">kenangan manis untuk anda.</h1>
+			<!-- <a class="btn btn-md btn-secondary fw-medium text-uppercase mb-2" href="products.html" role="button" style="letter-spacing: 1px; border: solid 3px;">Order Now</a> -->
+		</div>
+	</section>
+	<section class="hero-banner-img mb-4 shadow d-none"
+		style="background-image: url('{$BASEURL}/resource/assets-frontend/dist/banner/—Pngtree—simple\ flag\ indonesia\ background_1912697.png');">
+		<div class="hero-banner-caption">
+			<h1 class="text-uppercase fw-bold text-nowrap">Eat well, be happy,</h1>
+			<h1 class="text-uppercase fw-bold text-nowrap">kenes loves you.</h1>
+			<p class="text-break fw-bold  text-capitalize lh-sm">Lorem ipsum dolor sit amet consectetur adipisicing
+				elit.</p>
+			<button type="button" class="btn fw-medium btn-secondary text-uppercase text-nowrap"
+				style="letter-spacing: 1px; border: solid 3px;">Learn More</button>
+		</div>
+	</section>
+	<div class="container prelauncing mb-5">
+		<div class="row mt-5 mb-5"
+			style="color: white; background-color:#662A0C; border-radius: 50px; padding: 10px; margin: auto; box-shadow: 5px 8px lightgray; ">
+			<h2 class="text-uppercase fw-medium text-center text-wrap"><b>Surprise Deal</b></h2>
+		</div>
+		<div class="row g-4 justify-content-evenly p-2">
+			<div class="date-launcing d-flex flex-column d-none">
+
+				<div id="MyDateDisplay" class="clock" onload="showTime()"></div>
+				<div id="MyHariDisplay" class="clock"></div>
+				<div id="MyClockDisplay" class="clock"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="swiper swiper-prelaunch">
+					<div class="text-center swiper-wrapper">
+						{foreach from=$prelaunch item=prelaunch_item}
+						<div class="swiper-slide">
+							<div class="card-best-seller-caption text-center p-1 position-relative">
+								<a target="_blank" href="{$BASEURL}/resource/assets-frontend/dist/product/{$prelaunch_item->product_pict}" target="blank" rel="">
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/{$prelaunch_item->product_pict}" alt="" class="img-fluid rounded shadow pre-launch" >
+									<!-- <h4><span class="badge rounded position-absolute top-0 end-0 text-uppercase" style="background-color:#f4d406; color: black;">Pre-launch</span></h4> -->
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/pre-launch/promo/PRE LAUNCH.png"
+										class="span-promo" alt="">
+								</a>
+								<div class="position-absolute top-50 start-50 translate-middle" style="transform: translate(-50%, -50%);">
+									<!-- <a class="btn btn-sm icon-link icon-link-hover text-uppercase fw-bold text-nowrap" role="button" href="{site_url(['products/detail_produk?id=67'])}" style=" color: #ffffff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.3);">
+										Order Now
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd"
+												d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+										</svg>
+									</a> -->
+								</div>
+							</div> 
+						</div>
+						{/foreach}
+						
+					</div>
+				
+				</div>
+				<!-- <div class="swiper-pagination"></div> -->
+			</div>
+
+			<!-- Section untuk pre launch dan arrival -->
+			<div class="col-md-4 product-arrival">
+				<div class="swiper swiper-prelaunch">
+					<div class="swiper-wrapper">
+                        {foreach from=$arrival item=arrival_item}
+						<div class="swiper-slide">
+							<a href="{$BASEURL}/resource/assets-frontend/dist/product/{$arrival_item->product_pict}" target="blank" rel="">
+								<img src="{$BASEURL}/resource/assets-frontend/dist/product/{$arrival_item->product_pict}" alt="" class="img-fluid rounded shadow pre-launch">
+							   <img src="{$BASEURL}/resource/assets-frontend/dist/product/pre-launch/promo/NEW ARRIVAL.png" class="span-promo" alt="">
+								<!-- <h4><span class="badge rounded-50 position-absolute top-0 start-100 translate-middle text-uppercase" style="background-color:#f4d406; border-radius: 50%; color: black;">New Product</span></h4> -->
+							</a>
+								<div class="position-absolute top-50 start-50 translate-middle" style="transform: translate(-50%, -50%);">
+									<a class="btn btn-sm icon-link icon-link-hover text-uppercase fw-bold text-nowrap" role="button" href="{site_url(['products/detail_produk?id=67'])}" style=" color: #ffffff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.3);">
+										Order Now
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+										</svg>
+									</a>
+								</div>									
+						</div>
+						
+						{/foreach}
+					</div>
+					<!-- <div class="swiper-pagination"></div> -->
+				</div>
+			</div>
+			<!-- <div class="col-md-4">
+				<div class="card border-0">
+					<div class="card-img">
+						<a href="assets/dist/product/cake/6.jpg" target="_blank" rel="noopener noreferrer">
+
+							<img src="assets/dist/product/cake/6.jpg" alt="" class="img-fluid rounded shadow">
+							<h4><span class="badge rounded position-absolute top-0 end-0" style="background-color:#f4d406; color: black;">New</span></h4>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card border-0">
+					<div class="card-img">
+						<a href="assets/dist/product/cake/5.jpg" target="_blank" rel="noopener noreferrer">
+							
+							<img src="assets/dist/product/cake/5.jpg" alt="" class="img-fluid rounded shadow">
+							<h4><span class="badge rounded position-absolute top-0 end-0" style="background-color:#f4d406; color: black;">New</span></h4>
+						</a>
+					</div>
+				</div>
+			</div> -->
+
+		</div>
+	</div>
+	<div class="container outlet mb-5">
+		<div class="row mt-5 mb-5"
+			style="color: white; background-color:#662A0C; border-radius: 50px; padding: 10px; margin: auto; box-shadow: 5px 8px lightgray; ">
+			<h2 class="text-uppercase fw-medium text-center text-wrap"><b>Our Outlets</b></h2>
+
+		</div>
+		<div class="row g-4">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-img">
+						<img src="{$BASEURL}/resource/assets-frontend/dist/outlet/b9593617eb617a7df8d152166ffe1593.jpeg"
+							alt="" class="img-fluid rounded-2">
+						<span class="badge rounded jarakTravelSpot position-absolute top-0 end-0"
+							style="background-color: #662A0C;"></span>
+					</div>
+					<div class="card-outlet-caption text-center">
+						<h2 class="text-uppercase fw-bold text-wrap fs-5" style="color: #fff; letter-spacing: 1px;">
+							Travel Spot & Catering</h2>
+						<h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl.
+								Magelang Km 5,5, Kab. Sleman, DIY 55284</small></h6>
+						<a class="btn btn-lg icon-link icon-link-hover text-uppercase fw-medium mb-2 text-nowrap"
+							target="_blank" href="https://goo.gl/maps/CV1ZCtUmEgEpo6Ky9" role="button" href="#"
+							style=" color: white; letter-spacing: 0px; border: solid 3px;">
+							Find Now
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-arrow-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-img">
+						<img src="{$BASEURL}/resource/assets-frontend/dist/outlet/bdae2130e2ac873e2a6ba567cfbf4073.jpeg"
+							alt="" class="img-fluid rounded-2">
+						<span class="badge rounded jarakWiku position-absolute top-0 end-0"
+							style="background-color: #662A0C;"></span>
+					</div>
+					<div class="card-outlet-caption text-center">
+						<h2 class="text-uppercase fw-bold text-nowrap fs-5" style="color: #fff; letter-spacing: 1px; ">
+							Kenes Bakery</h2>
+						<h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl.
+								Wijayakusuma Kab. Sleman, DIY 55284</small></h6>
+						<a class="btn btn-primary btn-lg icon-link icon-link-hover text-uppercase fw-medium mb-2 text-nowrap"
+							target="_blank" href="https://goo.gl/maps/9YmDtwafSMeFrq3f8" role="button" href="#"
+							style=" color: white; letter-spacing: 0px; border: solid 3px; background-color: rgba(0, 0, 0, 0.5);">
+							Find Now
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-arrow-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-6 offset-md-3  ">
+				<div class="card">
+					<div class="card-img">
+						<img src="{$BASEURL}/resource/assets-frontend/dist/outlet/7608b1751c15398e016b5505303b8344.jpeg"
+							alt="" class="img-fluid rounded-2">
+						<span class="badge rounded jarakKusuma position-absolute top-0 end-0"
+							style="background-color: #662A0C;"></span>
+					</div>
+					<div class="card-outlet-caption text-center">
+						<h2 class="text-uppercase fw-bold text-nowrap fs-5" style="color: #fff; letter-spacing: 1px;">
+							Kopitiam</h2>
+						<h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl.
+								Kusumanegara No. 70, DIY 55284</small></h6>
+						<a class="btn btn-primary btn-lg icon-link icon-link-hover text-uppercase fw-medium mb-2 text-nowrap"
+							target="_blank" href="https://goo.gl/maps/Bcet9T1Gt9zCebJt9" role="button" href="#"
+							style=" color: white; letter-spacing: 0px; border: solid 3px; background-color: rgba(0, 0, 0, 0.5);">
+							Find Now
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-arrow-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="clearfix text-center">
+				<a class="icon-link icon-link-hover text-capitalize fw-medium mb-2 text-nowrap link-dark"
+					href="{site_url('/outlet')}" style="font-size: 20px;">
+					<u>Find Outlet More</u>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-shop" viewBox="0 0 16 16">
+						<path
+							d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
+					</svg>
+				</a>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="container best-seller mb-5">
+		<div class="row mt-5 mb-5"
+			style="color: white; background-color:#662A0C; border-radius: 50px; padding: 10px; margin: auto; box-shadow: 5px 8px lightgray; ">
+			<h2 class="text-uppercase fw-medium text-center text-wrap"><b>Our Products</b></h2>
+
+		</div>
+		<div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-2">
+			<div class="col-sm-6 col-md-6 col-lg-5 order-2 order-md-1">
+				<div class="image-product">
+					<a data-fancybox=""
+								href="{$BASEURL}/resource/assets-frontend/dist/product/category-product/kuno_e.png">
+								<img src="{$BASEURL}/resource/assets-frontend/dist/product/category-product/kuno_e.png"
+									alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+					</a>
+					<div class="card-best-seller-caption text-center p-1">
+						<h5 class="text-uppercase fw-bold" style="color:#fff; letter-spacing: 0px;">Bakery</h5>
+						<!-- <h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl. Kusumanegara No. 70, DIY 55284</small></h6> -->
+						<a class="btn  btn-md icon-link icon-link-hover text-uppercase fw-bold mb-2 text-nowrap"
+							role="button" href="{site_url('/products')}"
+							style=" color: #fff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.2);">
+							Order Now
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-arrow-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="row mt-4 justify-content-center">
+					<div class="col-md-12 col-lg-12">
+						<div class="image-product">
+							<a data-fancybox=""
+								href="{$BASEURL}/resource/assets-frontend/dist/product/category-product/142970540_693042431379895_5616682301336512530_n.jpg">
+								<img src="{$BASEURL}/resource/assets-frontend/dist/product/category-product/142970540_693042431379895_5616682301336512530_n.jpg"
+									alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+
+								<!-- <span class="best-seller badge rounded bg-warning">
+									Best Seller -->
+
+							</a>
+							<div class="card-best-seller-caption text-center shadow p-1">
+								<h5 class="text-uppercase fw-bold" style="color:#fff; letter-spacing: 0px;">Catering
+								</h5>
+								<!-- <h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl. Kusumanegara No. 70, DIY 55284</small></h6> -->
+								<a class="btn  btn-md icon-link icon-link-hover text-uppercase fw-bold mb-2 text-nowrap"
+									role="button" href="{site_url('/products')}"
+									style=" color: #fff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.2);">
+									Order Now
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-arrow-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd"
+											d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-lg-7 order-1 order-md-2">
+				<div class="image-product text-center ">
+					<div class="swiper swiper-opsi">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a data-fancybox="_blank"
+									href="{$BASEURL}/resource/assets-frontend/dist/product/category-product/IMG-20230731-WA0002.jpg">
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/category-product/IMG-20230731-WA0002.jpg"
+										alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+									<!-- <span class="best-seller badge rounded bg-warning">
+										Best Seller -->
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a data-fancybox="_blank"
+									href="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361116579_655585049805969_271098158120960775_n.jpg">
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361116579_655585049805969_271098158120960775_n.jpg"
+										alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+									<!-- <span class="best-seller badge rounded bg-warning">
+										Best Seller -->
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a data-fancybox="_blank"
+									href="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361618230_1925209374521556_2387062652247838258_n.jpg">
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361618230_1925209374521556_2387062652247838258_n.jpg"
+										alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+									<!-- <span class="best-seller badge rounded bg-warning">
+										Best Seller -->
+								</a>
+
+							</div>
+							<div class="swiper-slide">
+								<a data-fancybox="_blank"
+									href="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361923990_201458202577709_5383573693245247781_n.jpg">
+									<img src="{$BASEURL}/resource/assets-frontend/dist/product/kopitiam/361923990_201458202577709_5383573693245247781_n.jpg"
+										alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow">
+									<!-- <span class="best-seller badge rounded bg-warning">
+										Best Seller -->
+								</a>
+
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<div class="card-best-seller-caption text-center p-1">
+						<h5 class="text-uppercase fw-bold" style="color:#fff; letter-spacing: 0px;">Kopitiam</h5>
+						<!-- <h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl. Kusumanegara No. 70, DIY 55284</small></h6> -->
+						<a class="btn  btn-md icon-link icon-link-hover text-uppercase fw-bold mb-2 text-nowrap"
+							role="button" href="{site_url('/products')}"
+							style=" color: #fff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.2);">
+							Order Now
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-arrow-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="row justify-content-evenly mt-1 mt-md-4 cake-product gy-4 gy-md-0">
+					<div class="col-md-6 col-lg-5">
+						<div class="image-product">
+							<a data-fancybox=""
+								href="{$BASEURL}/resource/assets-frontend/dist/product/category-product/236697245_115184277533073_5700570991601920156_n.jpg">
+								<img src="{$BASEURL}/resource/assets-frontend/dist/product/category-product/236697245_115184277533073_5700570991601920156_n.jpg"
+									alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow"
+									style="width: 100%; height: 300px; object-fit:fill;">
+
+							</a>
+							<div class="card-best-seller-caption text-center p-1">
+								<h5 class="text-uppercase fw-bold" style="color:#fff; letter-spacing: 0px;">Cake Custom
+								</h5>
+								<!-- <h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl. Kusumanegara No. 70, DIY 55284</small></h6> -->
+								<a class="btn  btn-sm icon-link icon-link-hover text-uppercase fw-bold mb-2 text-nowrap"
+									role="button" href="{site_url('/products')}"
+									style=" color: #fff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.2);">
+									Order Now
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-arrow-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd"
+											d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-5">
+						<div class="image-product">
+							<a data-fancybox=""
+								href="{$BASEURL}/resource/assets-frontend/dist/product/category-product/DSC03102_E.jpg">
+								<img src="{$BASEURL}/resource/assets-frontend/dist/product/category-product/DSC03102_E.jpg"
+									alt="product-kenes" class="img-fluid rounded-2 product-kenes shadow"
+									style="width: 100%; height: 300px; object-fit:fill;">
+
+							</a>
+							<div class="card-best-seller-caption text-center">
+								<h5 class="text-uppercase fw-bold" style="color:#fff; letter-spacing: 0px;">Pudding</h5>
+								<!-- <h6 class="text-capitalize fw-bold" style="color: #fff; letter-spacing: 1px;"><small>Jl. Kusumanegara No. 70, DIY 55284</small></h6> -->
+								<a class="btn  btn-sm icon-link icon-link-hover text-uppercase fw-bold mb-2 text-nowrap"
+									role="button" href="{site_url('/products')}"
+									style=" color: #fff; letter-spacing: 0px; border: solid 2px; background-color: rgba(0, 0, 0, 0.2);">
+									Order Now
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-arrow-right" viewBox="0 0 16 16">
+										<path fill-rule="evenodd"
+											d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- <div class="container feedback mb-5" id="feedback-section">
+		<h2 class="text-uppercase fw-medium text-center mb-4"><b style="color: #662A0C">What Our Customer</b></h2>
+		<div class="row mt-5 mt-md-5 mb-2">
+			<div class="col"></div>
+			<div class="swiper swiper-feedback">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-nvZ4NubOIZE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-facebook" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-vky4-smP-aE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-google" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-nvZ4NubOIZE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-google" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-vky4-smP-aE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-google" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-nvZ4NubOIZE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-google" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card border border-0 shadow text-center">
+							<img src="{$BASEURL}/resource/assets-frontend/dist/feedback/jusdevoyage-nvZ4NubOIZE-unsplash.jpg" class="card-img-top mx-auto" alt="...">
+							<div class="card-body">
+								<div class="star">
+									<ul class="d-flex justify-content-center">
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+										<li>
+											<i class="fa-solid fa-star" style="color: #f4d406;"></i>
+										</li>
+									</ul>
+								</div>
+								<blockquote class="blockquote mb-0">
+									<p>A well-known quote, contained in a blockquote element.</p>
+									<footer class="blockquote-footer" style="color: #fff;">Customer Kenes</footer>
+								</blockquote>
+								<div class="d-inline">
+									<span class=""><i class="fa-brands fa-google" style="color: #4086F4;"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>   
+		</div>
+	</div>  -->
+	<div class="d-flex justify-content-end section-cs">
+		<span class="customer-service p-3">
+			<a href="https://wa.me/6287839295999?text=Silahkan Tanyakan Ke Admin Seputar Produk Kenes & Bakery ya."
+				class="" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Whatsapp"><i
+					class="fa-brands fa-whatsapp fa-lg"></i></a>
+		</span>
+	</div>
+</main>

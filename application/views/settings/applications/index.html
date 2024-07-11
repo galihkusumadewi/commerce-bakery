@@ -1,0 +1,62 @@
+<div class="card">
+	<div class="card-header d-flex justify-content-between">
+		<div class="header-title">
+			<h4 class="card-title">
+                <i class="{$current_page.nav_icon}"></i>
+                <span>{$current_page.nav_title}</span>
+            </h4>
+		</div>
+	</div>
+	<div class="card-body">
+        <form action="{site_url($current_page.nav_url)}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="site_id" value="{$web.site_id}" >
+            <div class="row">
+                <div class="col-md-2 align-self-center center">
+                    <div class="form-group">
+                        <img id="output" src="{$BASEURL}resource\assets\default\images\{$web.site_icon|default:''}" alt="logo" class="img-preview"/><br/>
+                        <label>Preview</label>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="col-md-12">                      
+                        <div class="form-group">
+                            <label>Website Title *</label>
+                            <input type="text" class="form-control" placeholder="Enter Website Title" required name="site_title" value="{$web.site_title}">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>                                 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Website Logo</label>
+                            <div class="input-group mb-4">
+                                <div class="custom-file">
+                                   <input type="file" class="custom-file-input" id="image_file" name="site_icon" accept="image/*" onchange="loadFile(event)">
+                                   <label class="custom-file-label" for="image_file">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Website Description</label>
+                        <textarea class="form-control" rows="4" name="site_desc">{$web.site_desc}</textarea>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var loadFile = function(event) {
+                  var output = document.getElementById('output');
+                  output.src = URL.createObjectURL(event.target.files[0]);
+                  output.onload = function() {
+                    URL.revokeObjectURL(output.src) // free memory
+                  }
+                };
+            </script>
+            <button type="submit" class="btn btn-primary mr-2">Update</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</div>

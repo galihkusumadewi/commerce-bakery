@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Login | {$site.site_title|default:''}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{$BASEURL}resource\assets\default\images\logo-kenes-2.png">
+        <!-- App css -->
+        <link href="{$BASEURL}resource/assets/default/css/main.css" rel="stylesheet" type="text/css" id="backend-plugin-stylesheet" />
+        <link href="{$BASEURL}resource/assets/css/backend-plugin.min.css" rel="stylesheet" type="text/css" id="backend-plugin-stylesheet" />
+        <link href="{$BASEURL}resource/assets/css/backend.css?v=1.0.0" rel="stylesheet" type="text/css" id="backend-stylesheet" />
+        <link href="{$BASEURL}resource/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" id="fontawesome-stylesheet" />
+        <link href="{$BASEURL}resource/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css" rel="stylesheet" type="text/css" id="lineawesome-stylesheet" />
+        <link href="{$BASEURL}resource/assets/vendor/remixicon/fonts/remixicon.css" rel="stylesheet" type="text/css" id="remixicon-stylesheet" />
+    </head>
+    <body class=" ">
+        <!-- loader Start -->
+        <div id="load-page">
+              <div id="load-center">
+              </div>
+        </div>
+        <!-- loader END -->
+        
+          <div class="wrapper">
+          <section class="login-content">
+             <div class="container">
+               {include file="$template_content"}
+             </div>
+          </section>
+          </div>
+        
+        <!-- Backend Bundle JavaScript -->
+        <script src="{$BASEURL}resource/assets/js/backend-bundle.min.js"></script>
+        
+        <!-- Table Treeview JavaScript -->
+        <script src="{$BASEURL}resource/assets/js/table-treeview.js"></script>
+        
+        <!-- Chart Custom JavaScript -->
+        <script src="{$BASEURL}resource/assets/js/customizer.js"></script>
+        
+        <!-- Chart Custom JavaScript -->
+        <script async src="{$BASEURL}resource/assets/js/chart-custom.js"></script>
+        
+        <!-- app JavaScript -->
+        <script src="{$BASEURL}resource/assets/js/app.js"></script>
+        <script src="{$BASEURL}resource/assets/default/js/main.js"></script>
+</html>

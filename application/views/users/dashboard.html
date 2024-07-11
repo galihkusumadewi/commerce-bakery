@@ -1,0 +1,186 @@
+<main>
+  <style>
+    /* Tambahkan CSS untuk mengatur ukuran elemen canvas */
+    .chart {
+      width: 70%; /* Atur lebar elemen canvas sesuai kebutuhan */
+      height: 70%;
+    }
+
+    button {
+  --color: black;
+  
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+}
+
+button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+button:hover {
+  color: white;
+}
+
+button:before {
+  top: 100%;
+  left: 100%;
+  transition: .3s all;
+}
+
+button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+  </style>
+</main>
+
+<body>
+  <div class="header-title">
+    <h4 class="card-title">
+      <i class="{$current_page.nav_icon}"></i>
+      <span class="my-1">{$current_page.nav_title}</span>
+    </h4>
+  </div>
+
+  <div class="row">
+    <div class="col-2 mb-4 mt-4">
+      <div>
+        <input type="date" id="startDate" name="startDate">
+      </div>
+    </div>
+    <div class="col-2 mb-4 mt-4">
+      <div>
+        <input type="date" id="endDate" name="endDate">
+      </div>
+    </div>
+    <button type="button" name= "button" class="" id="submitButton">Submit</button>
+  </div>
+
+  <div class="chart">
+    <canvas id="myChart"></canvas>
+  </div>
+</body>
+
+{assign var='data_produk_json' value=$data_produk|json_encode}
+<script>
+  // Ambil elemen canvas dengan ID "myChart"
+  const ctx = document.getElementById('myChart').getContext('2d');
+
+  // Ambil data produk dari variabel JavaScript yang sudah disimpan
+  var dataProduk = {$data_produk_json};
+
+  console.log('Data Produk:', dataProduk);
+
+  // Ekstrak label dari data produk
+  var labels = dataProduk.map(item => item.product_name);
+
+  // Ekstrak data dari data produk
+  var data = dataProduk.map(item => item.total_qty);
+  var waktu = dataProduk.map(item => item.created);
+
+  // Buat objek Chart dengan tipe 'bar' menggunakan label dan data yang sudah diambil
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Jumlah Produk',
+          data: data,
+          borderWidth: 1,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+        },
+      ],
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false, 
+          position: 'right', 
+        },
+      },
+    },
+  });
+
+
+const startDateInput = document.getElementById('startDate');
+const endDateInput = document.getElementById('endDate');
+
+// Fungsi untuk mengirim permintaan AJAX dan memperbarui grafik
+function updateChart(startDate, endDate) {
+  // Lakukan pemfilteran data dan pembaruan grafik di sini
+  const filteredData = dataProduk.filter(item => {
+    const itemDate = new Date(item.created);
+    return itemDate >= new Date(startDate) && itemDate <= new Date(endDate);
+  });
+  console.log("updateChart called with startDate:", startDate, "endDate:", endDate);
+
+  const filteredLabels = filteredData.map(item => item.product_name);
+  const filteredDataValues = filteredData.map(item => item.total_qty);
+
+  myChart.data.labels = filteredLabels;
+  myChart.data.datasets[0].data = filteredDataValues;
+  myChart.update();
+
+
+  // $.ajax({
+  //   type: 'POST',
+  //   url: 'dashboard', 
+  //   data: { startDate, endDate },
+  //   success: function (response) {
+      
+  //     console.log("Response:", response);
+
+  //     try {
+  //       console.log("Filtered Data:", response);
+      
+
+  //     } catch (error) {
+  //       console.error("Error parsing JSON:", error);
+  //     }
+  //   },
+    
+  // });
+}
+
+// Event listener untuk perubahan tanggal
+document.getElementById('submitButton').addEventListener('click', () => {
+  const startDate = startDateInput.value;
+  const endDate = endDateInput.value;
+  updateChart(startDate, endDate);
+});
+
+
+</script>

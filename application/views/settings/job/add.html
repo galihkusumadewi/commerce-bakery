@@ -1,0 +1,61 @@
+
+
+
+    <div class="container job-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Tambah Job</b></h2>
+            </div>
+        </div>
+
+        <form id="myForm" method="post" action="{site_url([$current_page.nav_url, 'add'])}" enctype="multipart/form-data">
+            <div class="row justify-tex-center">
+                <div class="col col-md-12 mx-auto">
+                    <div class="row justify-content mb-4">
+                        <div class="col-md-3">
+                            <label for="nama_job" class="col-md-6 col-form-label">Nama Job</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="job_name">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content mb-4">
+                        <div class="col-md-3">
+                            <label for="deskripsi_job" class="col-md-6 col-form-label">Deskripsi Job</label>
+                        </div>
+                        <div class="col-md-8">
+                            <textarea id="summernote" name="job_description"></textarea>
+                        
+                        </div>
+                    </div>
+
+                    <div class="row justify-content mb-4">
+                        <div class="col-md-3">
+                            <label for="job_img">Foto Job</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="file" class="form-control-file" name="job_img" id="job_img">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content mb-4">
+                        <div class="col-md-3">
+                            <label for="job_date">Valid Until</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="datetime-local" class="form-control-file" name="job_date" id="job_date">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-sm-5 text-left"> 
+                            <button type="submit" class="btn btn-lg d-grid gap-2 col-8 mx-auto" style="background-color: #662A0C; color: aliceblue;">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+

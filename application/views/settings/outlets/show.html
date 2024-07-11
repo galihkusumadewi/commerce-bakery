@@ -1,0 +1,60 @@
+<div class="row row-cols-1 row-cols-md-2 mb-4">
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="card">
+            <img src="{$BASEURL}/resource/assets-frontend/dist/outlet/{$outlet.outlet_photo}" alt="product-kenes" class="img-fluid rounded-2 product-kenes">
+        </div>    
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 flex-column">
+        <li class="list-group-item active" aria-current="true">Detail Outlet {$outlet.outlet_name}</li>
+        <ul class="list-group">
+            <div class="modal-body" >
+                <label class="col-md-4">Nama Outlet</label>
+                <span class="col-md-8">: {$outlet.outlet_name}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Outlet ID</label>
+                <span class="col-md-8">: {$outlet.outlet_id}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Kode Outlet</label>
+                <span class="col-md-8">: {$outlet.outlet_code}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Status</label>
+                <span class="col-md-8">: {if $outlet.outlet_status == 0}Active{else}Tidak Aktif{/if}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Alamat</label>
+                <span class="col-md-8">: {$outlet.outlet_address}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Kota</label>
+                <span class="col-md-8">: {$outlet.kota}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Telepon</label>
+                <span class="col-md-8">: {$outlet.outlet_phone}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Created</label>
+                <span class="col-md-8">: {$outlet.created}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Created By</label>
+                <span class="col-md-8">: {$outlet.created_by}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Modified</label>
+                <span class="col-md-8">: {$outlet.modified}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Modified By</label>
+                <span class="col-md-8">: {$outlet.modified_by}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Highlight</label>
+                <span class="col-md-8">: {if $outlet.outlet_highlight == 0}Not Show{else}Show{/if}</span>
+            </div>
+        </ul>
+      </div>  
+</div> 

@@ -1,0 +1,88 @@
+<style>
+     .user-photo {
+    margin-top: 100px;
+    margin-left: 100px;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+   
+  }
+
+  .user-details {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
+<div class="row row-cols-1 row-cols-md-2 mb-4">
+    <div class="col-12 col-md-6 col-lg-6">
+        <div class="">
+            <div class="user.detail d-flex justify-content-start">
+
+                <img src="{$BASEURL}/resource/assets-frontend/dist/account/{$member->user_photo}" class="user-photo" alt="">
+         
+             </div>
+        </div>    
+    </div>
+       
+    <div class="col-12 col-md-6 col-lg-6 flex-column">
+        
+  
+        <li class="list-group-item active" aria-current="true">Detail Member </li>
+        <ul class="list-group">
+            <div class="modal-body" >
+                <label class="col-md-4">Username</label>
+                <span class="col-md-8">: {$member->user_name}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">User Alias</label>
+                <span class="col-md-8">: {$member->user_alias} </span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Full Name</label>
+                <span class="col-md-8">: {$member->fullname}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Email</label>
+                <span class="col-md-8">: {$member->user_email}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Tanggal Lahir</label>
+                <span class="col-md-8">: {$member->date_of_birth}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Telepon</label>
+                <span class="col-md-8">: {$member->phone}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Alamat</label>
+                <span class="col-md-8">: {$member->address}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Status</label>
+                <span class="col-md-8">: {$member->user_st}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">User Lock</label>
+                <span class="col-md-8">: {$member->user_lock}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Created</label>
+                <span class="col-md-8">: {$member->created}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Created By</label>
+                <span class="col-md-8">: {$member->created_by}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Modified</label>
+                <span class="col-md-8">: {$member->modified}</span>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-4">Modified By</label>
+                <span class="col-md-8">: {$member->modified_by}</span>
+            </div>
+        </ul>
+      </div>  
+</div> 

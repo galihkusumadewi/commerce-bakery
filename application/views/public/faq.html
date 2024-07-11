@@ -1,0 +1,260 @@
+<main>
+    <div class="container faq-container mb-5">
+            <div class="d-flex flex-column align-items-center">
+                <div class="heading-page p-2 mt-4">
+                    <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">FAQ</b></h2>
+                </div>
+                <div class="breadcrumb p-2">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <!-- <li class="breadcrumb-item"><a href="<?= site_url('home'); ?>">Home</a></li> -->
+                          <li class="breadcrumb-item"><a href="{site_url('/')}">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+                        </ol>
+                    </nav>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-4">
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-General-list" data-bs-toggle="list"
+                        href="#list-General" role="tab" aria-controls="list-General"
+                        onclick="changeDropdownText('General')">General</a>
+                    <a class="list-group-item list-group-item-action" id="list-Sertifikasi-list" data-bs-toggle="list"
+                        href="#list-Sertifikasi" role="tab" aria-controls="list-Sertifikasi"
+                        onclick="changeDropdownText('Sertifikasi')">Sertifikasi</a>
+                    <a class="list-group-item list-group-item-action" id="list-Delivery-list" data-bs-toggle="list"
+                        href="#list-Delivery" role="tab" aria-controls="list-Delivery"
+                        onclick="changeDropdownText('Delivery')">Delivery</a>
+                    <a class="list-group-item list-group-item-action" id="list-Sponsorship-list" data-bs-toggle="list"
+                        href="#list-Sponsorship" role="tab" aria-controls="list-Sponsorship" data-bs-toggle="list"
+                        onclick="changeDropdownText('Sponsorship')">Sponsorship</a>
+                  </div>
+                </div>
+
+                    <div class="dropdown text-center mb-3">
+                        <button class="btn dropdown-toggle" type="button" id="dropdown-list" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="border: solid 3px; border-color: #662A0C;">
+                            General
+                          
+                        </button>
+                        <ul class="dropdown-menu dropdown-faq"></ul>
+                    </div>
+
+                    <div class="col-12 col-md-8">
+                        <div class="tab-content" id="nav-tabContent">
+
+             <!-- KONTEN General -->
+                            <div class="tab-pane fade show active" id="list-General" role="tabpanel" aria-labelledby="list-General-list">
+                                <div
+                                    class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
+                                    <div class="">
+                                        <div class="General"></div>
+
+                                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                    Bagaimana Brand Story dari Kenes Bakery & Resto?
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                                <div class="accordion-body">
+                                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore libero culpa qui maxime at ducimus error temporibus fugit, deserunt odit eaque cum vero harum eligendi necessitatibus, pariatur nulla architecto dolor?
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                    Apa keuntungan menggunakan Aplikasi dan Website Kenes Bakery and Resto?
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                                <div class="accordion-body">
+                                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam quia officiis tempore maiores impedit. Perspiciatis minus dignissimos maiores nihil officia in nesciunt quaerat delectus natus, ullam debitis laudantium totam!
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                    Pukul berapakah Kenes Bakery & Resto buka dan tutup?
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                                <div class="accordion-body">
+                                                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore reiciendis libero eligendi quae ex nostrum recusandae nisi, cum odit sint harum vero delectus facere numquam at et! Maiores, natus rem.
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                 <!-- KONTEN Sertifikasi -->
+                            <div class="tab-pane fade" id="list-Sertifikasi" role="tabpanel" aria-labelledby="list-Sertifikasi-list">
+                                <div
+                                    class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
+                                    <div class="">
+                                        <div class="Sertifikasi"></div>
+
+                                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                  Apakah Kenes Bakery memiliki sertifikasi halal?
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                                <div class="accordion-body">
+                                                    Iya, Kenes Bakery & Resto telah memiliki sertifikat halal MUI dan telah memiliki Sertifikat Produksi Pangan Industri Rumah Tangga dari Dinas Kesehatan Sleman
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                  Apakah semua makanan yang ada di Kenes Resto & Kopitiam halal ? 
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                                <div class="accordion-body">
+                                                  ya, seluruh makanan di Kenes Resto dan Kopitiam halal.
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                  Apakah Kenes Bakery & Resto sudah memiliki sertifikasi BPOM?
+                                                </button>
+                                              </h2>
+                                              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                                <div class="accordion-body">
+                                                    Iya, Kenes Bakery & Resto telah memiliki sertifikat BPOM
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                          <!-- KONTEN Delivery -->
+                                    <div class="tab-pane fade" id="list-Delivery" role="tabpanel" aria-labelledby="list-Delivery-list">
+                                        <div
+                                            class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
+                                            <div class="">
+                                                <div class="Delivery"></div>
+
+                                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                                    <div class="accordion-item">
+                                                      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                        Apakah Kenes Bakery and Resto memiliki layanan Delivery?
+                                                        </button>
+                                                      </h2>
+                                                      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                                        <div class="accordion-body">
+                                                          Ya, Kenes Bakery and Resto memiliki layanan Delivery order.
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                          Bagaimana cara menggunakan layanan pesan antar dari Kenes Bakery?
+                                                        </button>
+                                                      </h2>
+                                                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                                        <div class="accordion-body">
+                                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere ipsum libero nemo reprehenderit, quos qui esse fugiat provident maiores, dicta praesentium aut ab earum nisi soluta consequatur blanditiis accusantium impedit!
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                        Apakah Kenes Resto & Kopitiam sudah terdaftar di aplikasi delivery seperti shopee food, go food, dll?
+                                                        </button>
+                                                      </h2>
+                                                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                                        <div class="accordion-body">
+                                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptatem amet recusandae. Neque vero accusantium molestias placeat, eligendi error unde facilis dolor officia nostrum inventore aliquid consequuntur possimus doloremque laudantium.
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                             <!-- KONTEN SPONSORSHIP -->
+                                        <div class="tab-pane fade" id="list-Sponsorship" role="tabpanel" aria-labelledby="list-Sponsorship-list">
+                                            <div
+                                                class="d-flex flex-row flex-wrap flex-lg-nowrap justify-content-center justify-content-lg-start">
+                                                <div class="">
+                                                    <div class="Sponsorship"></div>
+
+                                                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                                                        <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                                            Bagaimana cara bekerjasama dengan Kenes Bakery & Resto?
+                                                            </button>
+                                                        </h2>
+                                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                                            <div class="accordion-body">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eius atque obcaecati veniam, quod, non est facere nobis accusantium voluptatem assumenda excepturi unde suscipit aut maxime! Quaerat, ullam repellendus. Recusandae.
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                            Bagaimana cara memperoleh Sponsorship dari Kenes Food?
+                                                            </button>
+                                                        </h2>
+                                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                                            <div class="accordion-body">
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, necessitatibus molestias. Atque hic ratione exercitationem itaque sit eveniet ut id omnis. Dolor repudiandae perferendis rerum veniam corrupti corporis sunt earum!
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                            Apakah Kenes Food menerima mahasiswa magang dan prakerin SMK?
+                                                            </button>
+                                                        </h2>
+                                                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                                            <div class="accordion-body">
+                                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat voluptatibus maiores alias odit veritatis itaque velit quibusdam voluptatem eaque, ut eum quae delectus rem deserunt ullam fugit quo labore eveniet.
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                        </div>
+                    </div>
+
+                   
+
+              
+            </div>
+        </div>
+
+
+</main>
+
+    

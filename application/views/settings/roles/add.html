@@ -1,0 +1,55 @@
+<main>
+    <div class="container edit-menu-container mb-5">
+        <div class="d-flex flex-column align-items-center">
+            <div class="heading-page p-2 mt-4">
+                <h2 class="text-uppercase fw-medium text-center"><b style="color:#662A0C">Tambah Data Role</b></h2>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col col-md-6 mx-auto">
+            <div class="card">
+                <form method="post" action="{site_url([$current_page.nav_url, 'add'])}" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="userCode">Role ID</label>
+                            <input type="text" readonly class="form-control" value="{$role_id}" name="id">
+                            <input type="hidden" class="form-control" value="{$role_id}" name="role_id"> 
+                            <input type="hidden" class="form-control" name="default_page" id="def_page" value="2001000">
+                            <input type="hidden" class="form-control" name="site_id" id="site_id" value="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="userName">Role Name</label>
+                            <input type="text" class="form-control" name="role_nm" id="userName">
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Role Status</label>
+                            <select id="userType" name="role_st" class="form-control">
+                                <option value="1">Inactive</option>
+                                <option value="0">Active</option>
+                            </select>
+                        </div>
+                    </div>
+
+                        <div class="card-body">
+                            
+                                <a class="btn btn-md btn-outline-primary" id="showFormButton" role-id="{$role_id}"><i class="fa-solid fa-circle-plus"></i> Tambah Menu</a>
+                                
+                                <div id="formContainer">
+                                
+                                    
+                                </div>
+
+                                
+
+                    <div class="form-group" style="text-align: center;">
+                        <label for="submit"></label>
+                        <button type="submit" style="background-color: #662A0C; color: #fff;" class="btn btn-primary" name="submit">SIMPAN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
